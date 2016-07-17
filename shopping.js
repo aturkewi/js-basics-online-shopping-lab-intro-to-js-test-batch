@@ -30,26 +30,6 @@ function addToCart(itemName) {
   return cart;
 }
 
-// function viewCart() {
-//   const l = cart.length
-//
-//   if (!l) {
-//     return console.log("Your shopping cart is empty.")
-//   }
-//
-//   const itemsAndPrices = []
-//
-//   for (let i = 0; i < l; i++) {
-//     let itemAndPrice = cart[i]
-//     let item = Object.keys(itemAndPrice)[0]
-//     let price = itemAndPrice[item]
-//
-//     itemsAndPrices.push(`${item} at \$${price}`)
-//   }
-//
-//   console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
-// }
-
 function viewCart(){
   if (cart.length == 0){
     return "Your shopping cart is empty."
@@ -63,7 +43,21 @@ function viewCart(){
       itemArray.push(itemString);
     }
     let itemsString = itemArray.join(", ")
-    let = yourCartAsString = "In your cart you have " + itemsString + "."
+    let = yourCartAsString = "In your cart, you have " + itemsString + "."
     console.log(yourCartAsString)
   }
+}
+
+function removeFromCart(itemName){
+  let didNotFind = true;
+  for(var i=0; i < cart.length; i++){
+    if (cart[i].hasOwnProperty(itemName)){
+      cart.splice(i, 1);
+      didNotFind = false;
+    }
+  }
+  if(didNotFind){
+    console.log("That item is not in your cart.");
+  }
+  return cart;
 }
