@@ -61,3 +61,12 @@ function removeFromCart(itemName){
   }
   return cart;
 }
+
+function placeOrder(creditCardNum){
+  if (!creditCardNum){
+    console.log("We don't have a credit card on file for you to place your order.");
+  }else{
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${creditCardNum}.`);
+    cart = [];
+  }
+}
