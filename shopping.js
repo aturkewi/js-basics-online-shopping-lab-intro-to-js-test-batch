@@ -34,8 +34,12 @@ function viewCart(){
   if (cart.length == 0){
     return "Your shopping cart is empty."
   }else{
+    var itemArray = []
     for (var itemName in cart) {
-      console.log(`In your cart you have ${itemName} ${cart[itemName]}`)
+      let itemString = `${itemName} at $${cart[itemName]}`
+      itemArray.push(itemString);
     }
+    let itemsString = itemArray.join(", ")
+    console.log("In your cart you have " + itemsString + ".")
   }
 }
