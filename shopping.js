@@ -35,11 +35,15 @@ function viewCart(){
     return "Your shopping cart is empty."
   }else{
     var itemArray = []
-    for (var itemName in cart) {
-      let itemString = `${itemName} at $${cart[itemName]}`
+    for (var i=0; i < cart.length; i++) {
+      let item = cart[i];
+      let itemName = Object.keys(item)[0];
+      let itemCost = item[itemName];
+      let itemString = `${itemName} at $${itemCost}`
       itemArray.push(itemString);
     }
     let itemsString = itemArray.join(", ")
-    console.log("In your cart you have " + itemsString + ".")
+    let = yourCartAsString = "In your cart you have " + itemsString + "."
+    console.log(yourCartAsString)
   }
 }
